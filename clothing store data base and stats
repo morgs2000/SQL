@@ -1,0 +1,33 @@
+--Create a clothing store data base
+
+create table store (id integer primary key,item text,quantity integer,location integer,price numeric);
+
+insert into store values(1,"blue top",3,1,20);
+insert into store values(2,"blue jeans",6,2,50);
+insert into store values(3,"blue shoes",4,3,45);
+insert into store values(4,"pink top",5,1,35);
+insert into store values(5,"pink jeans",2,4,68);
+insert into store values(6,"pink shoes",3,2,55);
+insert into store values(7,"purlpe top",4,1,30);
+insert into store values(8,"purple jeans",3,2,65);
+insert into store values(9,"purple shoes",5,3,45);
+insert into store values(10,"green top",1,1,15);
+insert into store values(11,"green jeans",3,2,25);
+insert into store values(12,"green shoes",2,3,12);
+insert into store values(13,"yelllow top",4,1,15);
+insert into store values(14,"yellow jeans",5,2,46);
+insert into store values (15,"yellow shoes",6,3,22);
+
+--display total price of merchendice from each location in the store
+SELECT * FROM store;
+select price sum from store group by location;
+
+--display item prices from most expensice to leat
+SELECT * FROM store
+ORDER BY price desc;
+
+display top 8 most expencive pieces in store
+SELECT item, price
+FROM store
+order by price desc
+limit 8; 
